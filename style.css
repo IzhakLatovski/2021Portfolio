@@ -109,7 +109,7 @@ nav .navbar-container ul li a.active {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 99;
+  z-index: 8;
   animation: navbar-animation 0.6s;
 }
 
@@ -358,7 +358,7 @@ nav .navbar-container ul li a.active {
   cursor: auto;
 }
 
-#portfolio-section .social-icon img {
+#portfolio-section .social-icon > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -431,24 +431,178 @@ nav .navbar-container ul li a.active {
   transition: 0.4s;
 }
 
-#portfolio-section .social-icon:nth-child(1) {
-  background-color: rgb(233, 68, 68);
+/* --- Popup --- */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
 }
 
-#portfolio-section .social-icon:nth-child(2) {
-  background-color: rgb(14, 125, 177);
+/* Modal Content/Box */
+.modal-content {
+  background-color: whitesmoke;
+  margin: 0% auto;
+  padding: 0px;
+  text-align: left;
+  color: #000;
+  border: 1px solid var(--dark-color);
+  box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+  width: 45%;
+  position: relative;
 }
 
-#portfolio-section .social-icon:nth-child(4) {
-  background-color: rgb(23, 139, 81);
+/* The Close Button */
+.close {
+  color: #aaa;
+  position: absolute;
+  right: 1rem;
+  bottom: 0.4rem;
+  font-size: 3rem;
+  font-weight: 300;
 }
 
-#portfolio-section .social-icon:nth-child(5) {
-  background-color: rgb(233, 162, 68);
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-#portfolio-section .social-icon:nth-child(6) {
-  background-color: rgb(171, 81, 199);
+/* --- Popup content --- */
+.not-image-gallery {
+  margin: 20px;
+}
+
+.modal-content h5 {
+  color: #444444;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.4rem auto;
+}
+
+.modal-content h6 {
+  color: #adadad;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0.4rem auto 0.6rem;
+}
+
+.modal-content hr {
+  border: none;
+  border-top: solid 1px #cfcfcf;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0.6rem auto;
+}
+
+.modal-content button {
+  background-color: var(--main-color);
+  border: solid 2px var(--main-color);
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 0.6rem 1.2rem;
+  margin-top: 2rem;
+  transition: 0.3s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.modal-content button i {
+  margin-right: 0.2rem;
+}
+.modal-content button:hover {
+  background-color: transparent;
+  border-color: var(--main-color);
+  color: var(--dark-color);
+}
+
+/* --- Photo gallery --- */
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide the images by default */
+.mySlides,
+.mySlides2 {
+  display: none;
+}
+
+.mySlides img,
+.mySlides2 img {
+  border-bottom: solid var(--dark-color) 4px;
+  max-height: 350px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  bottom: 7px;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* -------------------- Contact section -------------------- */
