@@ -44,3 +44,20 @@ $(window).scroll(function() {
 let year = new Date().getFullYear();
 
 $(".copyright").html("© IZHAK LATOVSKI " + year);
+
+// Portfolio filtering
+$(document).ready(function(){
+    $(".list").click(function() {
+        if(($(this).attr("data-filter")) === "all") {
+            $(".social-icon").show();
+        } else {
+            $(".social-icon").hide();
+            $(".social-icon").filter("." + $(this).attr("data-filter")).show();
+        }
+    });
+
+        // update the menu with the active selection
+    $(".list").click(function() {
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+});

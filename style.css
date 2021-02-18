@@ -201,6 +201,7 @@ nav .navbar-container ul li a.active {
   width: 140px;
   height: 140px;
   border-radius: 50%;
+  border: solid var(--dark-color) 2px;
 }
 
 #about-section .column.about-text p {
@@ -315,25 +316,119 @@ nav .navbar-container ul li a.active {
   height: 60%;
 }
 /* -------------------- Portfolio section -------------------- */
+#portfolio-section ul {
+  display: flex;
+  justify-content: center;
+  margin: 0 5%;
+}
+
+#portfolio-section ul li {
+  list-style: none;
+  padding: 0.4rem 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#portfolio-section ul li.active {
+  transition: 0.3s;
+  background: var(--main-color);
+  color: whitesmoke;
+}
+
+#portfolio-section .social-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
 #portfolio-section .social-icon {
   display: inline-block;
-  margin: 0 -3px;
-  width: 30%;
-  height: 14rem;
+  margin: 0;
+  width: 26%;
+  height: 18rem;
   background-color: var(--background-color);
   color: whitesmoke;
   font-size: 2rem;
   padding-top: 1.2rem;
   transition: 0.6s;
+  position: relative;
+  cursor: auto;
+}
+
+#portfolio-section .social-icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#portfolio-section .social-icon .top {
+  position: absolute;
+  top: 0;
+  background-color: whitesmoke;
+  height: 50%;
+  width: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  color: #1b242f;
+  opacity: 0;
+  transition: 0.4s;
+  padding-top: 3rem;
+}
+
+#portfolio-section .social-icon .top h4 {
+  font-size: 1.8rem;
+  margin: 0.4rem;
+}
+#portfolio-section .social-icon .top p {
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#portfolio-section .social-icon .bottom {
+  background-color: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  color: #1b242f;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+#portfolio-section .social-icon .bottom button {
+  background-color: transparent;
+  border: solid 2px var(--main-color);
+  color: var(--dark-color);
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 0.6rem 1.2rem;
+  margin-top: 2rem;
+  transition: 0.3s;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
-#portfolio-section .social-icon:hover {
-  opacity: 80%;
+#portfolio-section .social-icon .bottom button:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: whitesmoke;
 }
 
-#portfolio-section .social-icon:last-child {
-  margin-bottom: 5rem;
+#portfolio-section .social-icon:hover .top,
+#portfolio-section .social-icon:hover .bottom {
+  visibility: visible;
+  transform: scaleY(1);
+  opacity: 100%;
+  transition: 0.4s;
 }
 
 #portfolio-section .social-icon:nth-child(1) {
