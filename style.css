@@ -1,8 +1,8 @@
 :root {
-/* --main-color: #8c52ff; */
---main-color: #3a86ff;
-/*  --secondary-color: #c0a0ff; */
---secondary-color: #b0ceff;
+  /* --main-color: #8c52ff; */
+  --main-color: #3a86ff;
+  /* --secondary-color: #c0a0ff; */
+  --secondary-color: #b0ceff;
   --background-color: #252934;
   --dark-color: #1b242f;
 }
@@ -21,6 +21,13 @@ body {
 
 section {
   position: relative;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
 }
 
 button:focus {
@@ -539,13 +546,15 @@ nav .navbar-container ul li a.active {
 }
 
 /* Hide the images by default */
-.mySlides,
-.mySlides2 {
+.mySlides1,
+.mySlides2,
+.mySlides3 {
   display: none;
 }
 
-.mySlides img,
-.mySlides2 img {
+.mySlides1 img,
+.mySlides2 img,
+.mySlides3 img {
   border-bottom: solid var(--dark-color) 4px;
   max-height: 350px;
 }
@@ -653,7 +662,7 @@ nav .navbar-container ul li a.active {
 #contact-section form {
   width: 50%;
   max-width: 35rem;
-  margin: 3rem auto;
+  margin: 3rem auto 0;
 }
 
 #contact-section form input,
@@ -711,6 +720,52 @@ textarea::placeholder {
 #contact-section form button:hover div {
   transition: 0.3s;
   transform: scale(1.1) rotate(20deg);
+}
+
+#contact-section #form-status {
+  display: none;
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 400;
+  color: whitesmoke;
+  width: 50%;
+  max-width: 35rem;
+}
+
+#contact-section #form-status.success {
+  background-color: green;
+  animation: form-status-appear 4s ease forwards;
+  display: inline-block;
+}
+
+#contact-section #form-status.error {
+  background-color: red;
+  animation: form-status-appear 4s ease forwards;
+  display: inline-block;
+}
+
+@keyframes form-status-appear {
+  0% {
+    opacity: 0;
+    pointer-events: all;
+  }
+  10% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+#contact-section .static-contact-info {
+  margin-top: 2rem;
 }
 
 #contact-section h2 {
@@ -774,7 +829,7 @@ textarea::placeholder {
 
 .social-icon {
   display: inline-block;
-  margin: 2rem;
+
   width: 75px;
   height: 75px;
   background-color: var(--background-color);
@@ -783,6 +838,12 @@ textarea::placeholder {
   padding-top: 1.2rem;
   transition: 0.6s;
   cursor: pointer;
+}
+
+#contact-section a,
+#contact-section button {
+  margin: 2rem;
+  border: none;
 }
 
 .social-icon:hover {
